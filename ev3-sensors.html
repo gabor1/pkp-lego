@@ -101,7 +101,7 @@
 </pre></div>
 </div>
 <p>Then import some python functions</p>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span>      <span class="n">from</span> <span class="n">pybricks</span><span class="p">.</span><span class="n">hubs</span> <span class="n">import</span> <span class="n">EV3Brick</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">from</span> <span class="n">pybricks</span><span class="p">.</span><span class="n">hubs</span> <span class="n">import</span> <span class="n">EV3Brick</span>
 <span class="n">from</span> <span class="n">pybricks</span><span class="p">.</span><span class="n">ev3devices</span> <span class="n">import</span> <span class="p">(</span>
   <span class="n">ColorSensor</span><span class="p">,</span>
   <span class="n">TouchSensor</span><span class="p">,</span>
@@ -165,7 +165,7 @@ y_{k+1} &amp;= \alpha x_{k+1} + (1 - \alpha) y_k
 <p>In other words, the first value is take as it is, but all following values are weighted by the smoothing factor <span class="math notranslate nohighlight">\(\alpha\)</span> and combined with the previous value.</p>
 <blockquote>
 <div><p><em>Task:</em> What does it mean if the smoothing factor is 0 or 1?</p>
-<p><em>Task:</em> Adapt your plotSensor code to send the signal through a low-pass filter. Make the smoothing factor easily customisable. Choose a sensor and observe the effects with high and low smoothing factors.</p>
+<p><em>Task:</em> Adapt your code to send the sensor signal through a low-pass filter. Make the smoothing factor easily customisable. Choose a sensor and observe the effects with high and low smoothing factors.</p>
 </div></blockquote>
 <p>For more details on low-pass filters, check out the <a class="reference external" href="http://en.wikipedia.org/wiki/Low-pass_filter">Low-pass filter Wikipedia article</a> and the <a class="reference external" href="http://en.wikipedia.org/wiki/Exponential_smoothing">Exponentially-Weighted Moving Average Wikipedia article</a>.</p>
 </section>
