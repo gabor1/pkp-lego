@@ -111,16 +111,22 @@
 <section id="connecting-to-the-ev3">
 <h2>Connecting to the EV3<a class="headerlink" href="#connecting-to-the-ev3" title="Permalink to this heading">¶</a></h2>
 <p>Using the Explorer (top left) tab in VSCode, find the “EV3DEV DEVICE BROWSER” item and toggle the arrow, find the “ev3dev” device and click on it. Once the connection is established, the dot next to it turns green.</p>
-<dl class="simple">
-<dt>You can now connect to the brick, by right-clicking on the green dot, and selecting “Open SSH Terminal”. This will open a new window within VSCode and drop you into a linux command shell on the LEGO brick. In order to run python commands on it, type::</dt><dd><p>brickrun -r – pybricks-micropython</p>
-</dd>
-<dt>Once in the python environment, import a module::</dt><dd><p>from pybricks.hubs import EV3Brick</p>
-</dd>
-<dt>Then create a python object that represents the brick::</dt><dd><p>ev3 = EV3Brick()</p>
-</dd>
-<dt>And now we can issue commands, here is the first one::</dt><dd><p>ev3.speaker.beep()</p>
-</dd>
-</dl>
+<p>You can now connect to the brick, by right-clicking on the green dot, and selecting “Open SSH Terminal”. This will open a new window within VSCode and drop you into a linux command shell on the LEGO brick. In order to run python commands on it, type</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">brickrun</span> <span class="o">-</span><span class="n">r</span> <span class="o">--</span> <span class="n">pybricks</span><span class="o">-</span><span class="n">micropython</span>
+</pre></div>
+</div>
+<p>Once in the python environment, import a module</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">from</span> <span class="n">pybricks</span><span class="p">.</span><span class="n">hubs</span> <span class="n">import</span> <span class="n">EV3Brick</span>
+</pre></div>
+</div>
+<p>Then create a python object that represents the brick</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">ev3</span> <span class="p">=</span> <span class="n">EV3Brick</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>And now we can issue commands, here is the first one</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">ev3</span><span class="p">.</span><span class="n">speaker</span><span class="p">.</span><span class="n">beep</span><span class="p">()</span>
+</pre></div>
+</div>
 <p>You can hopefully guess and hear what it did!</p>
 <p>You can exit from the python shell by pressing Ctrl-D. This kind of interactive environment is good for learning to use single commands, and sometimes for debugging, but for longer programs, it is cumbersome. Once you have a bigger program, you can download it onto the brick by hovering the cursor above the “EV3DEV DEVICE BROWSER” item and pressing on the down-arrow icon that appears on the right. It downloads the contents of your currently open folder from VSCode. A good way to open a new folder and start coding is by clicking on the EV3 tab (it has the symbol of the lego Mindstorm: &lt;o&gt;, rotated by 90 degrees) on the left and then selecting “Create a new project”. It gives you a new file called “main.py” to start with, including some of the necessary import commands to start using motors and sensors.</p>
 </section>
