@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Introduction to the EV3 Matlab Toolkit &mdash; PKP Lego Robotics 2.0 documentation</title>
@@ -44,9 +44,9 @@
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Course Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="inventory.html">LEGO Inventory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python-intro.html">Python Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ev3-setup.html">EV3 Setup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ev3-motors.html">EV3 Motors Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ev3-sensors.html">EV3 Sensors Introduction and Low-Pass Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ev3-setup.html">EV3 Matlab Toolkit - Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ev3-motors.html">EV3 Matlab Toolkit - Motors Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ev3-sensors.html">EV3 Matlab Toolkit - Sensors Introduction and Low-Pass Filters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pid.html">PID Controller</a></li>
 <li class="toctree-l1"><a class="reference internal" href="project.html">Project Planning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
@@ -96,41 +96,41 @@
 <p>Let’s inspect this program now.</p>
 <section id="initialisation">
 <h3>Initialisation<a class="headerlink" href="#initialisation" title="Permalink to this heading">¶</a></h3>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% init the connection</span>
-<span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Connecting ... &#39;</span><span class="p">)</span>
-<span class="c">% brick usb init</span>
-<span class="n">b</span> <span class="p">=</span> <span class="n">Brick</span><span class="p">(</span><span class="s">&#39;ioType&#39;</span><span class="p">,</span><span class="s">&#39;usb&#39;</span><span class="p">);</span>
-<span class="c">% beep to indicate connection</span>
-<span class="n">b</span><span class="p">.</span><span class="n">beep</span><span class="p">();</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% init the connection</span><span class="w"></span>
+<span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Connecting ... &#39;</span><span class="p">)</span><span class="w"></span>
+<span class="c">% brick usb init</span><span class="w"></span>
+<span class="n">b</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Brick</span><span class="p">(</span><span class="s">&#39;ioType&#39;</span><span class="p">,</span><span class="s">&#39;usb&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="c">% beep to indicate connection</span><span class="w"></span>
+<span class="n">b</span><span class="p">.</span><span class="n">beep</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 <p>As you know already, <code class="docutils literal notranslate"><span class="pre">disp</span></code> outputs a string to the Matlab console. We then initiate a connection via USB to the brick. Note that if you want to run this example through wireless, you could follow the instructions in <span class="xref std std-doc">toolkit-setup</span>, and change this block of code to create a wireless connection. Finally, the successful connection is signalled by a beep.</p>
 </section>
 <section id="user-input">
 <h3>User input<a class="headerlink" href="#user-input" title="Permalink to this heading">¶</a></h3>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% user input</span>
-<span class="n">userIn</span> <span class="p">=</span> <span class="s">&#39;&#39;</span><span class="p">;</span>
-<span class="c">...</span>
-<span class="k">while</span><span class="p">(</span><span class="o">~</span><span class="n">strcmp</span><span class="p">(</span><span class="n">userIn</span><span class="p">,</span><span class="s">&#39;f&#39;</span><span class="p">))</span>
-  <span class="c">% get input</span>
-  <span class="n">userIn</span> <span class="p">=</span> <span class="n">input</span><span class="p">(</span><span class="s">&#39;&gt; Input(u,d,t,s,b,o,c,v,f): &#39;</span><span class="p">,</span><span class="s">&#39;s&#39;</span><span class="p">);</span>
-  <span class="c">...</span>
-<span class="k">end</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% user input</span><span class="w"></span>
+<span class="n">userIn</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="k">...</span><span class="w"></span>
+<span class="k">while</span><span class="p">(</span><span class="o">~</span><span class="nb">strcmp</span><span class="p">(</span><span class="n">userIn</span><span class="p">,</span><span class="s">&#39;f&#39;</span><span class="p">))</span><span class="w"></span>
+<span class="w">  </span><span class="c">% get input</span><span class="w"></span>
+<span class="w">  </span><span class="n">userIn</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">input</span><span class="p">(</span><span class="s">&#39;&gt; Input(u,d,t,s,b,o,c,v,f): &#39;</span><span class="p">,</span><span class="s">&#39;s&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="k">...</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Your input is monitored in a while loop. The condition for entering the while loop is that the user input (stored in the <code class="docutils literal notranslate"><span class="pre">userIn</span></code> variable) be not equal to the letter <em>f</em>. So next time you input <em>f</em>, the while loop won’t be entered, and the program will finish by closing the connection to the brick.</p>
 </section>
 <section id="speed-control">
 <h3>Speed control<a class="headerlink" href="#speed-control" title="Permalink to this heading">¶</a></h3>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% increase speed</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">userIn</span> <span class="o">==</span> <span class="s">&#39;u&#39;</span><span class="p">)</span>
-  <span class="n">motorPower</span> <span class="p">=</span> <span class="n">motorPower</span><span class="o">+</span><span class="mi">10</span><span class="p">;</span>
-  <span class="k">if</span> <span class="n">motorPower</span> <span class="o">&gt;</span><span class="p">=</span> <span class="mi">100</span>
-    <span class="n">motorPower</span> <span class="p">=</span> <span class="mi">100</span><span class="p">;</span>
-  <span class="k">end</span>
-  <span class="n">b</span><span class="p">.</span><span class="n">outputPower</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">Device</span><span class="p">.</span><span class="n">MotorA</span><span class="p">,</span><span class="n">motorPower</span><span class="p">)</span>
-  <span class="nb">disp</span><span class="p">([</span><span class="s">&#39;&gt; Motor Power: &#39;</span> <span class="n">num2str</span><span class="p">(</span><span class="n">motorPower</span><span class="p">)]);</span>
-<span class="k">end</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% increase speed</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">userIn</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&#39;u&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="n">motorPower</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">motorPower</span><span class="o">+</span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="n">motorPower</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">100</span><span class="w"></span>
+<span class="w">    </span><span class="n">motorPower</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">end</span><span class="w"></span>
+<span class="w">  </span><span class="n">b</span><span class="p">.</span><span class="n">outputPower</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">Device</span><span class="p">.</span><span class="n">MotorA</span><span class="p">,</span><span class="n">motorPower</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="nb">disp</span><span class="p">([</span><span class="s">&#39;&gt; Motor Power: &#39;</span><span class="w"> </span><span class="nb">num2str</span><span class="p">(</span><span class="n">motorPower</span><span class="p">)]);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </pre></div>
 </div>
 <p>When you input the letter <em>u</em>, the value of the variable <code class="docutils literal notranslate"><span class="pre">motorPower</span></code> is increased by 10. This is communicated to the brick by calling the <code class="docutils literal notranslate"><span class="pre">outputPower</span></code> function, specifying the motor port with <code class="docutils literal notranslate"><span class="pre">Device.MotorA</span></code>, and supplying the power value in <code class="docutils literal notranslate"><span class="pre">motorPower</span></code>. Note that the motor power is a percentage value in the range <code class="docutils literal notranslate"><span class="pre">-100..100</span></code>, which is why it is capped at 100 in the code.</p>
@@ -143,11 +143,11 @@
 </section>
 <section id="tachometer">
 <h3>Tachometer<a class="headerlink" href="#tachometer" title="Permalink to this heading">¶</a></h3>
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% output the tachometer</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">userIn</span> <span class="o">==</span> <span class="s">&#39;o&#39;</span><span class="p">)</span>
-<span class="n">tacho</span> <span class="p">=</span> <span class="n">b</span><span class="p">.</span><span class="n">outputGetCount</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">Device</span><span class="p">.</span><span class="n">MotorA</span><span class="p">);</span>
-  <span class="nb">disp</span><span class="p">([</span><span class="s">&#39;&gt; Tachometer: &#39;</span> <span class="n">num2str</span><span class="p">(</span><span class="n">tacho</span><span class="p">)]);</span>
-<span class="k">end</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% output the tachometer</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">userIn</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&#39;o&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="n">tacho</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">outputGetCount</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">Device</span><span class="p">.</span><span class="n">MotorA</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="nb">disp</span><span class="p">([</span><span class="s">&#39;&gt; Tachometer: &#39;</span><span class="w"> </span><span class="nb">num2str</span><span class="p">(</span><span class="n">tacho</span><span class="p">)]);</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
 </pre></div>
 </div>
 <p>When you input the letter <em>o</em>, the tachometer value of the motor is read an displayed. This value is the angle relative to the last time the tacho was cleared.</p>
